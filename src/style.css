@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav {
+  height: 10vh;
+}
+
+.row {
+  margin-top: 30px;
+}
+
+.value {
+  font-size: 30px;
+}
+.circle {
+  color: red;
+}
+.result {
+  font-size: 40px;
+}
