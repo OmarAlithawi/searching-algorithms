@@ -14,8 +14,9 @@ nav {
 .value {
   font-size: 30px;
 }
-.circle {
-  color: red;
+.active {
+  background-color: rgba(66, 1, 1, 0.336);
+  width: 40px;
 }
 .result {
   font-size: 40px;
