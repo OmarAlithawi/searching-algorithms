@@ -26,6 +26,7 @@ const linearSearch = async (arr, value) => {
   const speed = document.querySelector(".textInputSpeed").value;
   LINEAR_SEARCH_BTN.disabled = true;
   INPUT_TARGET.disabled = true;
+  BINARY_SEARCH_BTN.disabled = true;
   if (value !== "" && speed !== "") {
     parseInt(speed);
     for (let i = 0; i < arr.length; i++) {
@@ -34,6 +35,7 @@ const linearSearch = async (arr, value) => {
       if (currentHTMLElement.textContent == value) {
         LINEAR_SEARCH_BTN.disabled = false;
         INPUT_TARGET.disabled = false;
+        BINARY_SEARCH_BTN.disabled = false;
         return (REASULT.innerHTML = "index of the target = " + i);
       }
 
@@ -44,6 +46,7 @@ const linearSearch = async (arr, value) => {
         REASULT.innerHTML = "Element not found = " + -1;
         LINEAR_SEARCH_BTN.disabled = false;
         INPUT_TARGET.disabled = false;
+        BINARY_SEARCH_BTN.disabled = false;
       }
     }
     currentHTMLElement.classList.remove("active");
@@ -56,6 +59,7 @@ const binarySearch = async (arr, value) => {
   const speed = document.querySelector(".textInputSpeed").value;
   LINEAR_SEARCH_BTN.disabled = true;
   INPUT_TARGET.disabled = true;
+  BINARY_SEARCH_BTN.disabled = true;
   parseInt(speed);
   let start = 0;
   let end = arr.length - 1;
@@ -79,12 +83,14 @@ const binarySearch = async (arr, value) => {
       arr[middle].classList.add("active");
       LINEAR_SEARCH_BTN.disabled = false;
       INPUT_TARGET.disabled = false;
+      BINARY_SEARCH_BTN.disabled = false;
       return (REASULT.innerHTML = "index of the target = " + middle);
     }
     middle = Math.floor((start + end) / 2);
     if(i === arr.length -1){
       LINEAR_SEARCH_BTN.disabled = false;
       INPUT_TARGET.disabled = false;
+      BINARY_SEARCH_BTN.disabled = false;
       REASULT.innerHTML = "Element not found = " + -1;
     }
   }
