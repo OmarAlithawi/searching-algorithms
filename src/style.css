@@ -15,9 +15,29 @@ nav {
   font-size: 30px;
 }
 .active {
-  background-color: rgba(66, 1, 1, 0.336);
-  width: 40px;
+  color: red;
 }
 .result {
   font-size: 40px;
 }
+
+.start::after {
+  content: "start";
+  position: absolute;
+  top: -40px;
+  left: 5px;
+  color: blue;
+  width: 100%;
+  height: 100%;
+}
+
+.end::before {
+  content: "end";
+  position: absolute;
+  bottom: -60px;
+  left: 5px;
+  color:yellow;
+  width: 100%;
+  height: 100%;
+}
+
