@@ -1,0 +1,14 @@
+{
+  "name": "search",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/OmarAlithawi/search-algorithms.git",
+  "author": "Omar Alithawi <oadnan100@gmail.com>",
+  "scripts": {
+    "fix":"prettier --write '**/*.{js,css}'"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "2.0.5"
+  }
+}
