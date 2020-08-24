@@ -13,14 +13,14 @@ for (let i = 0; i < ALL_VALUES_ARRAY.length; i++) {
   NUMBERS_ARRAY.push(number);
 }
 
-// Render random numbers 
+// Render random numbers
 for (let j = 0; j < ALL_VALUES_ARRAY.length; j++) {
   NUMBERS_ARRAY.sort((a, b) => a - b);
   ALL_VALUES_ARRAY[j].textContent = NUMBERS_ARRAY[j];
   ALL_INDEXES_ARRAY[j].textContent = j;
 }
 
-// Delay for loops 
+// Delay for loops
 const delay = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
@@ -92,7 +92,7 @@ const binarySearch = async (arr, value) => {
       return (REASULT.innerHTML = "index of the target = " + middle);
     }
     middle = Math.floor((start + end) / 2);
-    if(i === arr.length -1){
+    if (i === arr.length - 1) {
       LINEAR_SEARCH_BTN.disabled = false;
       INPUT_TARGET.disabled = false;
       BINARY_SEARCH_BTN.disabled = false;
