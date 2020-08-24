@@ -12,7 +12,7 @@
     HTML_INDEX_ELEMENTS_ARRAY[j].textContent = j;
   }
 
-  // Linear search algorithm
+  // Linear search algorithm.
   const linearSearch = (arr, value) => {
     const speed = document.querySelector(".textInputSpeed").value;
     if (value !== "" && speed !== "") {
