@@ -7,21 +7,25 @@ const ALL_VALUES_ARRAY = document.querySelectorAll(".value");
 const ALL_INDEXES_ARRAY = document.querySelectorAll(".index");
 const NUMBERS_ARRAY = [];
 
+// Filling an array with random numbers
 for (let i = 0; i < ALL_VALUES_ARRAY.length; i++) {
   const number = Math.floor(Math.random() * 1000);
   NUMBERS_ARRAY.push(number);
 }
 
+// Render random numbers 
 for (let j = 0; j < ALL_VALUES_ARRAY.length; j++) {
   NUMBERS_ARRAY.sort((a, b) => a - b);
   ALL_VALUES_ARRAY[j].textContent = NUMBERS_ARRAY[j];
   ALL_INDEXES_ARRAY[j].textContent = j;
 }
 
+// Delay for loops 
 const delay = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
 
+// Linear search algorithm
 const linearSearch = async (arr, value) => {
   const speed = document.querySelector(".textInputSpeed").value;
   LINEAR_SEARCH_BTN.disabled = true;
@@ -55,6 +59,7 @@ const linearSearch = async (arr, value) => {
   }
 };
 
+// Binary search algorithm
 const binarySearch = async (arr, value) => {
   const speed = document.querySelector(".textInputSpeed").value;
   LINEAR_SEARCH_BTN.disabled = true;
@@ -96,6 +101,7 @@ const binarySearch = async (arr, value) => {
   }
 };
 
+// Event Listener
 BINARY_SEARCH_BTN.addEventListener("click", () => {
   for (let i = 0; i < ALL_VALUES_ARRAY.length; i++) {
     if (ALL_VALUES_ARRAY[i].classList.contains("active")) {
