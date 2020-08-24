@@ -28,15 +28,19 @@
       for (let i = 0; i < arr.length; i++) {
         const currentHTMLElement = arr[i];
         currentHTMLElement.classList.add("active");
+       
         if (currentHTMLElement.textContent == value) {
           LINEAR_SEARCH_BTN.disabled = false;
           SEARCHING_FOR_INPUT.disabled = false;
           BINARY_SEARCH_BTN.disabled = false;
+          currentHTMLElement.classList.add('correct');
           return (REASULT.innerHTML = "index of the target = " + i);
         }
 
         await delay(speed);
         currentHTMLElement.classList.remove("active");
+        currentHTMLElement.classList.add("notCorrect");
+        HTML_INDEXE_ELEMENTS_ARRAY[i].classList.add("indexElementAnimation");
 
         if (i === arr.length - 1) {
           REASULT.innerHTML = "Element not found = " + -1;
@@ -75,8 +79,10 @@
 
         if (value < arr[middle].textContent) {
           end = middle - 1;
+          binarySearchAnimationEnd(end);
         } else {
           start = middle + 1;
+          binarySearchAnimationStart(start);
         }
 
         if (arr[middle].textContent == value) {
@@ -84,6 +90,7 @@
           LINEAR_SEARCH_BTN.disabled = false;
           SEARCHING_FOR_INPUT.disabled = false;
           BINARY_SEARCH_BTN.disabled = false;
+          HTML_INDEXE_ELEMENTS_ARRAY[middle].classList.add('active');
           return (REASULT.innerHTML = "index of the target = " + middle);
         }
         middle = Math.floor((start + end) / 2);
@@ -99,11 +106,39 @@
     }
   };
 
+  // Binary search animation
+
+  const binarySearchAnimationStart = (endpoint) =>{
+    for(let i =0 ; i <endpoint;i++ ){
+      HTML_VALUE_ELEMENTS_ARRAY[i].classList.add('notCorrect');
+      HTML_INDEXE_ELEMENTS_ARRAY[i].classList.add('indexElementAnimation');
+    }
+
+  }
+
+  const binarySearchAnimationEnd = (endpoint) =>{
+    for(let i =endpoint+1 ; i <  HTML_VALUE_ELEMENTS_ARRAY.length;i++ ){
+      HTML_VALUE_ELEMENTS_ARRAY[i].classList.add('notCorrect');
+      HTML_INDEXE_ELEMENTS_ARRAY[i].classList.add('indexElementAnimation');
+    }
+
+  }
+
   // Event Listener
   BINARY_SEARCH_BTN.addEventListener("click", () => {
     for (let i = 0; i < HTML_VALUE_ELEMENTS_ARRAY.length; i++) {
       if (HTML_VALUE_ELEMENTS_ARRAY[i].classList.contains("active")) {
         HTML_VALUE_ELEMENTS_ARRAY[i].classList.remove("active");
+      }
+
+      if (HTML_VALUE_ELEMENTS_ARRAY[i].classList.contains("notCorrect")) {
+        HTML_VALUE_ELEMENTS_ARRAY[i].classList.remove("notCorrect");
+      }
+      if (HTML_VALUE_ELEMENTS_ARRAY[i].classList.contains("correct")) {
+        HTML_VALUE_ELEMENTS_ARRAY[i].classList.remove("correct");
+      }
+      if (HTML_INDEXE_ELEMENTS_ARRAY[i].classList.contains("indexElementAnimation")) {
+        HTML_INDEXE_ELEMENTS_ARRAY[i].classList.remove("indexElementAnimation");
       }
     }
     binarySearch(HTML_VALUE_ELEMENTS_ARRAY, SEARCHING_FOR_INPUT.value);
@@ -113,6 +148,16 @@
     for (let i = 0; i < HTML_VALUE_ELEMENTS_ARRAY.length; i++) {
       if (HTML_VALUE_ELEMENTS_ARRAY[i].classList.contains("active")) {
         HTML_VALUE_ELEMENTS_ARRAY[i].classList.remove("active");
+      }
+      
+      if (HTML_VALUE_ELEMENTS_ARRAY[i].classList.contains("notCorrect")) {
+        HTML_VALUE_ELEMENTS_ARRAY[i].classList.remove("notCorrect");
+      }
+      if (HTML_VALUE_ELEMENTS_ARRAY[i].classList.contains("correct")) {
+        HTML_VALUE_ELEMENTS_ARRAY[i].classList.remove("correct");
+      }
+      if (HTML_INDEXE_ELEMENTS_ARRAY[i].classList.contains("indexElementAnimation")) {
+        HTML_INDEXE_ELEMENTS_ARRAY[i].classList.remove("indexElementAnimation");
       }
     }
     linearSearch(HTML_VALUE_ELEMENTS_ARRAY, SEARCHING_FOR_INPUT.value);
