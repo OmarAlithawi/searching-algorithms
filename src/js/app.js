@@ -5,7 +5,7 @@
     NUMBERS_ARRAY.push(number);
   }
 
-  // Render random numbers
+  // Render random numbers.
   for (let j = 0; j < HTML_VALUE_ELEMENTS_ARRAY.length; j++) {
     NUMBERS_ARRAY.sort((a, b) => a - b);
     HTML_VALUE_ELEMENTS_ARRAY[j].textContent = NUMBERS_ARRAY[j];
