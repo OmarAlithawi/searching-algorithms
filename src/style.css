@@ -14,6 +14,7 @@ nav div ul li button {
 nav div ul li div input {
   margin-right: 20px;
 }
+
 @media only screen and (max-width: 990px) {
   nav div ul li button {
     width: 100%;
@@ -27,6 +28,7 @@ nav div ul li div input {
     margin-top: 10px;
     margin-bottom: 10px !important;
   }
+  
   nav {
     height: auto;
   }
