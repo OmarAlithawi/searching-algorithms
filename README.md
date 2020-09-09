@@ -7,6 +7,7 @@ This project demonstrate how these two algorithms works
 - You can search for a number by typing it in the left  input field
 - You must set a time in milliseconds in the right input field
 - Choose one of the algorithms
+- The project is built with vanilla JS and designed with Bootstrap.
 
 ### Live demo 
  - https://omaralithawi.github.io/searching-algorithms-visualization/
